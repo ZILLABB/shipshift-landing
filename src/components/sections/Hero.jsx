@@ -1,9 +1,11 @@
 import { ArrowRightIcon, PlayIcon, SparklesIcon } from '@heroicons/react/24/outline';
 import { TruckIcon, ClockIcon, ShieldCheckIcon, CheckCircleIcon } from '@heroicons/react/24/solid';
 import { motion } from 'motion/react';
+import { useState, useEffect } from 'react';
 import confetti from 'canvas-confetti';
 
 const Hero = () => {
+  const [activeCardIndex, setActiveCardIndex] = useState(-1);
   const handleGetStarted = () => {
     confetti({
       particleCount: 100,
@@ -38,6 +40,19 @@ const Hero = () => {
       tech: 'Decentralized Escrow'
     }
   ];
+
+  // Auto-cycling effect for tech details - one card at a time
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveCardIndex(prev => {
+        // Cycle through: -1 (none), 0, 1, 2, then back to -1
+        if (prev >= 2) return -1;
+        return prev + 1;
+      });
+    }, 2000); // Change every 2 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-olive-50">
@@ -133,9 +148,16 @@ const Hero = () => {
                   <div className="text-xs text-gray-500">
                     {stat.label}
                   </div>
-                  <div className="text-xs text-claude-600 opacity-0 group-hover:opacity-100 transition-opacity duration-200 mt-1">
+                  <motion.div
+                    className="text-xs text-claude-600 mt-1"
+                    animate={{
+                      opacity: activeCardIndex === index ? 1 : 0,
+                      y: activeCardIndex === index ? 0 : 10
+                    }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                  >
                     {stat.tech}
-                  </div>
+                  </motion.div>
                 </div>
               ))}
             </motion.div>
@@ -176,11 +198,21 @@ const Hero = () => {
                         <p className="text-body text-gray-600 text-sm leading-relaxed mb-1">
                           {feature.description}
                         </p>
-                        <div className="text-xs text-claude-600 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <motion.div
+                          className="text-xs text-claude-600"
+                          animate={{
+                            opacity: activeCardIndex === index ? 1 : 0,
+                            y: activeCardIndex === index ? 0 : 10
+                          }}
+                          transition={{
+                            duration: 0.5,
+                            ease: "easeInOut"
+                          }}
+                        >
                           <span className="text-mono inline-flex items-center px-2 py-1 rounded-full bg-claude-50 text-claude-700 font-medium">
                             {feature.tech}
                           </span>
-                        </div>
+                        </motion.div>
                       </div>
                     </div>
                   </motion.div>
