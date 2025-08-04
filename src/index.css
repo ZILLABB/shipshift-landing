@@ -10,6 +10,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Prevent automatic scroll restoration */
+    overscroll-behavior: none;
   }
 
   body {
@@ -20,6 +22,8 @@
     font-variant-numeric: tabular-nums;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Prevent layout shifts that could cause scrolling */
+    overflow-x: hidden;
   }
 }
 
@@ -148,5 +152,15 @@
 
   ::-webkit-scrollbar-thumb:hover {
     background: #556020;
+  }
+
+  /* Prevent scroll jumping from animations */
+  * {
+    scroll-margin-top: 80px;
+  }
+
+  /* Ensure smooth transitions don't cause layout shifts */
+  .motion-safe {
+    will-change: auto;
   }
 }

@@ -2,42 +2,49 @@ import { ArrowRightIcon, PlayIcon, SparklesIcon } from '@heroicons/react/24/outl
 import { TruckIcon, ClockIcon, ShieldCheckIcon, CheckCircleIcon } from '@heroicons/react/24/solid';
 import { motion } from 'motion/react';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import confetti from 'canvas-confetti';
 
 const Hero = () => {
   const [activeCardIndex, setActiveCardIndex] = useState(-1);
+  const navigate = useNavigate();
+
   const handleGetStarted = () => {
     confetti({
       particleCount: 100,
       spread: 70,
       origin: { y: 0.6 }
     });
+    // Navigate to signup page after confetti
+    setTimeout(() => {
+      navigate('/signup');
+    }, 1000);
   };
 
   const stats = [
-    { label: 'Total Supply', value: '2B', suffix: 'SST Tokens', tech: 'Algorithmic Supply Control' },
-    { label: 'Cost Reduction', value: '60%', suffix: 'vs Traditional', tech: 'AI-Optimized Routing' },
-    { label: 'Network Security', value: '99.9%', suffix: 'Uptime', tech: 'Self-Defending Protocol' }
+    { label: 'Countries Served', value: '50+', suffix: 'Worldwide', tech: 'Global Network' },
+    { label: 'Cost Savings', value: '60%', suffix: 'vs Traditional', tech: 'Smart Routing' },
+    { label: 'Delivery Success', value: '99.9%', suffix: 'Success Rate', tech: 'Reliable Service' }
   ];
 
   const features = [
     {
       icon: TruckIcon,
-      title: 'AI-Powered Delivery',
-      description: 'Machine learning optimizes routes for speed and cost',
-      tech: 'Neural Network Routing'
+      title: 'Community Transport',
+      description: 'Neighbors help transport packages along their daily routes',
+      tech: 'Colony Network'
     },
     {
       icon: ClockIcon,
-      title: 'Real-Time Tracking',
-      description: 'Blockchain-verified delivery confirmations',
-      tech: 'Immutable Audit Trail'
+      title: 'Token Rewards',
+      description: 'Earn Colony Tokens for every delivery you help complete',
+      tech: 'Earn While Commuting'
     },
     {
       icon: ShieldCheckIcon,
-      title: 'Smart Contracts',
-      description: 'Automated insurance and dispute resolution',
-      tech: 'Decentralized Escrow'
+      title: 'Secure Handoffs',
+      description: 'Smart contracts ensure safe package transfers between members',
+      tech: 'Trustless System'
     }
   ];
 
@@ -55,11 +62,21 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-olive-50 pt-20">
+    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-20">
+      {/* Background Image */}
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+           style={{
+             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`
+           }}>
+      </div>
+
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-br from-olive-900/20 via-gray-900/30 to-olive-800/40"></div>
+
       {/* Background Elements */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-      <div className="absolute top-16 left-8 w-48 h-48 bg-olive-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-      <div className="absolute top-32 right-8 w-48 h-48 bg-olive-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
+      <div className="absolute top-16 left-8 w-48 h-48 bg-olive-200 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse"></div>
+      <div className="absolute top-32 right-8 w-48 h-48 bg-olive-300 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse animation-delay-2000"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -77,13 +94,13 @@ const Hero = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-olive-100 text-olive-800 text-sm font-medium">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-olive-600/90 backdrop-blur-sm text-white text-sm font-medium">
                 <SparklesIcon className="w-4 h-4 mr-2" />
-                Decentralized Protocol
+                Decentralized Colony Network
               </div>
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm text-gray-800 text-sm font-medium">
                 <CheckCircleIcon className="w-4 h-4 mr-2 text-green-500" />
-                Free to Join
+                Earn Tokens for Helping
               </div>
             </motion.div>
 
@@ -95,17 +112,17 @@ const Hero = () => {
               transition={{ delay: 0.3, duration: 0.6 }}
             >
               <h1 className="text-display text-crisp text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight">
-                <span className="text-gray-900">Decentralized</span>
+                <span className="text-white">Community-Powered</span>
                 <br />
-                <span className="text-gradient-premium">
-                  Logistics Protocol
+                <span className="bg-gradient-to-r from-olive-400 to-olive-300 bg-clip-text text-transparent">
+                  Delivery Network
                 </span>
               </h1>
 
-              <p className="text-body text-lg lg:text-xl text-gray-600 leading-relaxed max-w-lg">
-                Unifying physical and digital economies through <strong className="text-body-medium text-gray-900">delivery-backed token utility</strong>,
-                <strong className="text-body-medium text-gray-900"> AI-powered routing</strong>, and programmable trust.
-                <span className="text-body-medium text-olive-700">Earn SST tokens through work-to-earn mechanics.</span>
+              <p className="text-body text-lg lg:text-xl text-gray-100 leading-relaxed max-w-lg">
+                Join a <strong className="text-body-medium text-white">decentralized logistics colony</strong> where community members
+                <strong className="text-body-medium text-white"> earn tokens</strong> by helping transport packages along their daily routes.
+                <span className="text-body-medium text-olive-300">Turn your commute into income.</span>
               </p>
             </motion.div>
 
@@ -120,13 +137,13 @@ const Hero = () => {
                 onClick={handleGetStarted}
                 className="group relative inline-flex h-10 items-center justify-center rounded-lg bg-olive-600 px-6 py-2 text-sm text-body-medium text-white transition-all duration-200 hover:bg-olive-700 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-olive-500 focus:ring-offset-2"
               >
-                Launch Protocol
+                Join a Colony
                 <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </button>
 
-              <button className="group inline-flex h-10 items-center justify-center rounded-lg border border-gray-300 px-6 py-2 text-sm text-body-medium text-gray-700 transition-all duration-200 hover:border-olive-300 hover:bg-olive-50">
+              <button className="group inline-flex h-10 items-center justify-center rounded-lg border border-white/50 px-6 py-2 text-sm text-body-medium text-white transition-all duration-200 hover:border-white hover:bg-white/10 backdrop-blur-sm">
                 <PlayIcon className="mr-2 h-4 w-4" />
-                View Whitepaper
+                How It Works
               </button>
             </motion.div>
 
@@ -171,7 +188,7 @@ const Hero = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
           >
             {/* Main Container */}
-            <div className="relative bg-gradient-to-br from-olive-50 via-white to-claude-50 rounded-2xl p-6 lg:p-8 shadow-xl border border-olive-100">
+            <div className="relative bg-white/95 backdrop-blur-sm rounded-2xl p-6 lg:p-8 shadow-xl border border-white/20">
               {/* Background Elements */}
               <div className="absolute inset-0 bg-grid-pattern opacity-5 rounded-3xl"></div>
               <div className="absolute top-3 right-3 w-20 h-20 bg-gradient-to-br from-claude-200 to-olive-200 rounded-full opacity-20 blur-xl"></div>
@@ -233,15 +250,15 @@ const Hero = () => {
             >
               <div className="flex items-center space-x-2">
                 <CheckCircleIcon className="w-4 h-4 text-green-500" />
-                <span>SOC 2 Compliant</span>
+                <span>Secure & Insured</span>
               </div>
               <div className="flex items-center space-x-2">
                 <CheckCircleIcon className="w-4 h-4 text-green-500" />
-                <span>ISO 27001 Certified</span>
+                <span>24/7 Support</span>
               </div>
               <div className="flex items-center space-x-2">
                 <CheckCircleIcon className="w-4 h-4 text-green-500" />
-                <span>GDPR Ready</span>
+                <span>Global Coverage</span>
               </div>
             </motion.div>
           </motion.div>

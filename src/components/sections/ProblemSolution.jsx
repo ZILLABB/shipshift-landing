@@ -15,42 +15,42 @@ const ProblemSolution = () => {
   const problems = [
     {
       icon: CurrencyDollarIcon,
-      title: 'Fragmented Global Logistics',
-      description: 'Global logistics is fragmented, expensive, and inaccessible to everyday users and micro-enterprises.',
-      tech: 'No unified system linking digital currency with physical delivery'
+      title: 'Expensive Shipping Costs',
+      description: 'Traditional shipping is expensive and complicated, especially for small businesses and individuals.',
+      tech: 'Limited options and high fees'
     },
     {
       icon: ExclamationTriangleIcon,
-      title: 'Crypto Economy Disconnect',
-      description: 'The crypto economy lacks real-world application beyond trading and speculation.',
-      tech: 'Missing bridge between digital assets and physical services'
+      title: 'Lack of Transparency',
+      description: 'Customers often don\'t know where their packages are or when they\'ll arrive.',
+      tech: 'Poor tracking and communication'
     },
     {
       icon: UserGroupIcon,
-      title: 'Lack of Programmable Trust',
-      description: 'No trustless system that links digital currency with physical delivery, security, and usability.',
-      tech: 'Manual processes without cryptographic verification'
+      title: 'Complex Processes',
+      description: 'Shipping requires dealing with multiple companies, paperwork, and confusing procedures.',
+      tech: 'Fragmented and time-consuming'
     }
   ];
 
   const solutions = [
     {
       icon: CpuChipIcon,
-      title: 'ShipShift AI Core',
-      description: 'Self-optimizing delivery routing engine that unifies physical and digital economies.',
-      tech: 'AI-powered logistics with delivery-backed token utility'
+      title: 'Smart Route Optimization',
+      description: 'Our platform finds the fastest and most cost-effective shipping routes automatically.',
+      tech: 'Intelligent routing for better prices'
     },
     {
       icon: ShieldCheckIcon,
-      title: 'Self-Defending Protocol',
-      description: 'Multi-layer security with real-time asset protection and fraud detection.',
-      tech: 'Programmable trust with autonomous security layers'
+      title: 'Secure & Protected',
+      description: 'All shipments are insured and protected with real-time monitoring and fraud prevention.',
+      tech: 'Built-in security and insurance'
     },
     {
       icon: LinkIcon,
-      title: 'Work-to-Earn Economy',
-      description: 'Utility-first model where users earn SST tokens through real logistics contributions.',
-      tech: 'Fiat/crypto dual economy compatibility'
+      title: 'Simple & Transparent',
+      description: 'One platform connects you with trusted carriers worldwide with clear pricing.',
+      tech: 'Easy-to-use with no hidden fees'
     }
   ];
 
@@ -58,11 +58,11 @@ const ProblemSolution = () => {
     <Section variant="gray" id="protocol">
       <div className="text-center mb-16">
         <h2 className="text-heading text-3xl lg:text-4xl text-gray-900 mb-4">
-          Bridging <span className="bg-gradient-to-r from-olive-600 to-claude-500 bg-clip-text text-transparent">Digital & Physical</span> Economies
+          Making Shipping <span className="bg-gradient-to-r from-olive-600 to-claude-500 bg-clip-text text-transparent">Simple & Affordable</span>
         </h2>
         <p className="text-body text-xl text-gray-600 max-w-3xl mx-auto">
-          ShipShift creates the first trustless operating system for global logistics,
-          unifying crypto and physical delivery through programmable trust.
+          We're solving the biggest problems in shipping by connecting you directly
+          with reliable carriers at transparent prices.
         </p>
       </div>
 
@@ -73,9 +73,9 @@ const ProblemSolution = () => {
             <div className="inline-flex items-center justify-center w-12 h-12 bg-red-100 rounded-xl mb-4">
               <ExclamationTriangleIcon className="h-6 w-6 text-red-600" />
             </div>
-            <h3 className="text-heading text-2xl text-gray-900 mb-4">Current Market Gaps</h3>
+            <h3 className="text-heading text-2xl text-gray-900 mb-4">Common Shipping Problems</h3>
             <p className="text-body text-gray-600 mb-8">
-              The global economy lacks a unified system connecting digital assets with physical services:
+              Traditional shipping has many frustrating issues that we're solving:
             </p>
           </div>
 
@@ -150,31 +150,31 @@ const ProblemSolution = () => {
 
           {/* Solution Benefits */}
           <Card className="p-6 bg-gradient-to-r from-olive-600 via-claude-500 to-olive-700 text-white">
-            <h4 className="font-semibold mb-4">Technical Advantages</h4>
+            <h4 className="font-semibold mb-4">Why Choose ShipShift</h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-white rounded-full"></div>
-                <span>Machine Learning Optimization</span>
+                <span>Best Price Guarantee</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-white rounded-full"></div>
-                <span>Blockchain Verification</span>
+                <span>Real-time Tracking</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-white rounded-full"></div>
-                <span>Microservices Architecture</span>
+                <span>Easy to Use Platform</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-white rounded-full"></div>
-                <span>Real-time Analytics</span>
+                <span>24/7 Customer Support</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-white rounded-full"></div>
-                <span>Automated Smart Contracts</span>
+                <span>Automatic Insurance</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-white rounded-full"></div>
-                <span>Decentralized Infrastructure</span>
+                <span>Global Coverage</span>
               </div>
             </div>
           </Card>
