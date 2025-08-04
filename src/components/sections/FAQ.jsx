@@ -23,8 +23,8 @@ const FAQ = () => {
       answer: 'Requesters pay collateral and service costs upfront. The collateral ensures package security and is returned upon successful delivery. This system protects all participants in the network.'
     },
     {
-      question: 'What are Steps and Collabo features?',
-      answer: 'Steps allow multi-step delivery processes with combinable constraints for complex routes. Collabo lets you create, store, and reuse delivery chain templates for efficient repeated operations.'
+      question: 'What are Steps and Collaborative features?',
+      answer: 'Steps allow multi-step delivery processes with combinable constraints for complex routes. Collaboration lets you create, store, and reuse delivery chain templates for efficient repeated operations.'
     },
     {
       question: 'How do I join a colony?',

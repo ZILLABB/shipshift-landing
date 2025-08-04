@@ -182,7 +182,7 @@ const ServicesPage = () => {
     },
     {
       icon: CurrencyDollarIcon,
-      title: 'Collabo Templates',
+      title: 'Collaborative Templates',
       description: 'Create, store, and reuse delivery chain templates for efficient repeated operations.',
       benefits: ['Template library', 'Reusable workflows', 'Efficiency optimization', 'Best practice sharing']
     },

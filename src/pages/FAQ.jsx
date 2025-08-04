@@ -74,8 +74,8 @@ const FAQPage = () => {
       icon: CogIcon,
       faqs: [
         {
-          question: 'What are Steps and Collabo features?',
-          answer: 'Steps allow multi-step delivery processes with combinable constraints for complex routes. Collabo lets you create, store, and reuse delivery chain templates for efficient repeated operations. These features make the system flexible for any shipping scenario.'
+          question: 'What are Steps and Collaborative features?',
+          answer: 'Steps allow multi-step delivery processes with combinable constraints for complex routes. Collaboration lets you create, store, and reuse delivery chain templates for efficient repeated operations. These features make the system flexible for any shipping scenario.'
         },
         {
           question: 'How are routes optimized?',

@@ -88,7 +88,7 @@ const FeaturesOverview = () => {
       details: 'Perfect for international shipments or packages requiring multiple handoffs'
     },
     {
-      title: 'Collabo Templates',
+      title: 'Collaborative Templates',
       description: 'Save and reuse successful delivery patterns to optimize recurring shipments.',
       icon: '📋',
       details: 'Build a library of efficient routes and share best practices'

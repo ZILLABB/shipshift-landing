@@ -50,7 +50,7 @@ const Services = () => {
     },
     {
       icon: ChartBarIcon,
-      title: 'Collabo Templates',
+      title: 'Collaborative Templates',
       description: 'Create, store, and reuse delivery chain templates for efficient operations.'
     },
     {

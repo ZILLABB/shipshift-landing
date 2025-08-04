@@ -71,7 +71,7 @@ const RoadmapPage = () => {
         '100+ carrier partners across 6 countries',
         'Advanced analytics and reporting dashboard',
         'Enterprise solutions and white-label options',
-        'Steps and Collabo features implementation',
+        'Steps and Collaborative features implementation',
         'Enhanced security and fraud detection'
       ],
       metrics: {
